@@ -46,10 +46,14 @@ grep "pagit.sh" .gitignore >/dev/null
 if [ $? != 0 ]; then echo "pagit.sh" >>.gitignore; fi
 git reset HEAD
 git add .
-if git commit -m COMMIT_MSG; then
+if git commit -m "$COMMIT_MSG"; then
 	git push origin master
 	echo -e "\033[32m 提交完成. 谢谢! \033[0m"
 	echo -e "\033[32m Commit succeed. Thank you! \033[0m"
+	if echo $HTTPS_PROVIDER | grep "gitee.com" >/dev/null; then
+		echo -e "\033[33m 请勿忘记在码云网站上手动更新Pages. \033[0m"
+		echo -e "\033[33m Do not forget Gitee Pages manual update. \033[0m"
+	fi
 else
 	echo -e "\033[33m 没有文件变动. \033[0m"
 	echo -e "\033[33m No file was updated. \033[0m"
