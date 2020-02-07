@@ -12,8 +12,9 @@ I am somehow sure even a monkey will be able to use this!
 2. 打开安装程序安装。一路下一步即可。直到……  
    当出现一页标题是"Choosing the default editor used by Git"时，从列表里选第一项，"Use the Nano"的那个。  
    其实这个不影响本工具的工作，但能节省您的青春。接下来继续一路下一步。
-3. 下载`pagit.sh`到你的电脑, 放到一个风水宝地。
-4. 用你喜欢的编辑器打开它, 按照里面十分明了的指示填入配置项。
+3. 点击 [此处](https://github.com/zbx1425/paGit/archive/master.zip) 下载本工具。
+   解压`pagit.sh`到你的电脑, 放到一个风水宝地。
+4. 右键->"打开方式"，用你喜欢的编辑器打开这个文件(不要"始终使用"), 按照里面十分明了的指示填入配置项。
 5. 双击`pagit.sh`。它应当提示"没有文件变动"或者"提交完成"。  
    如果您使用Github Pages，然后奇慢无比，请科学上网。
 6. 您现在可以编辑了！编辑完成后，双击`pagit.sh`就能上传到云端。
