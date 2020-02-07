@@ -9,8 +9,8 @@ GIT_EMAIL="somebody@somewhere.com"
 # 您的英文名 / Your Name
 GIT_UNAME="somebody"
 # 您仓库的"克隆/下载(Clone or download)"链接
-# 您往网页上找这几个字眼儿, 点开之后会出来个链接
-# 就是那个, 原样复制过来
+# 您会从您使用的网站得到一个格式类似的地址
+# 请原样复制过来
 # The "Clone or download" url of your repository
 # Just look for a button that says it on that page
 # And you should see a link when you clicks it
@@ -36,8 +36,9 @@ fi
 if [ -z $(git remote) ]; then
 	git remote add origin $HTTPS_PROVIDER
 fi
-git pull --set-upstream origin master
-if [ $? != 0 ]; then
+pmg=$(git pull --set-upstream origin master 2>&1); pst=$?
+echo $pmg | grep "couldn't find remote ref master" >/dev/null; echo $pmg
+if [ $pst != 0 -a $? != 0 ]; then
 	echo -e "\033[31m 发生合并冲突. 请手动解决! \033[0m"
 	echo -e "\033[31m Merge conflict. Please resolve it manually! \033[0m"
 	exit
