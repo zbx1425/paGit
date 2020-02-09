@@ -45,7 +45,6 @@ if [ $pst != 0 -a $? != 0 ]; then
 fi
 grep "pagit.sh" .gitignore >/dev/null
 if [ $? != 0 ]; then echo "pagit.sh" >>.gitignore; fi
-git reset HEAD
 git add .
 if git commit -m "$COMMIT_MSG"; then
 	git push origin master
